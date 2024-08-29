@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // to use ngIf, etc.
 
 @Component({
@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common'; // to use ngIf, etc.
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.css'
+  styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
   user_type: any;
@@ -16,17 +16,20 @@ export class HomePageComponent {
   showGroup: boolean = false;
   showBasic: boolean = false;
 
-  constructor(){
+  ngOnInit(){
     this.user_type = JSON.parse(sessionStorage.getItem("roles")!);
     console.log(this.user_type);
 
-    if (this.user_type[0] == "super"){
+    if (this.user_type[0] === "super"){
       this.showSuper = true;
-      alert("Super user")
-    } else if (this.user_type[0] == "group"){
       this.showGroup = true;
+      this.showBasic = true;
+      alert("Super user")
+    } else if (this.user_type[0] === "group"){
+      this.showGroup = true;
+      this.showBasic = true;
       alert("Group user")
-    } else {  // (this.user_type[0] == "basic")
+    } else {  // (this.user_type[0] === "basic")
       this.showBasic = true;
       alert("Basic user")
     }

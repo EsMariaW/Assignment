@@ -1,5 +1,12 @@
-<div id="basic">Show everything</div>
+<div *ngIf="showBasic">
+    Basic 
+</div>
 
-<ng-template> [ngIf]="showGroup">
-    <div> Group Only </div>
-</ng-template>
+<div *ngIf="showGroup">
+    Group 
+</div>
+
+<div *ngIf="showSuper">
+    Super 
+</div>
+  
