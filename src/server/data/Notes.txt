@@ -1,0 +1,7 @@
+Chat user model: 
+    username: unique identifier,
+    email: ,
+    id: ,
+    roles: [can be: basic, group, super],
+    groups: [all, groups],
+    password:,
