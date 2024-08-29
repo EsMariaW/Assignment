@@ -1,0 +1,29 @@
+[
+    {
+        "username": "super",
+        "email": "super@gmail.com",
+        "id": "superID",
+        "roles": ["super"],
+        "groups": [],
+        "password": "superPassword",
+        "valid": "true"
+    },
+    {
+        "username": "group",
+        "email": "group@gmail.com",
+        "id": "groupID",
+        "roles": ["group"],
+        "groups": [],
+        "password": "groupPassword",
+        "valid": "true"
+    },
+    {
+        "username": "basic",
+        "email": "basic@gmail.com",
+        "id": "basicID",
+        "roles": ["basic"],
+        "groups": [],
+        "password": "basicPassword",
+        "valid": "true"
+    }
+]
