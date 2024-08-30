@@ -22,9 +22,12 @@ export class HomePageComponent {
 
     if (this.user_type[0] === "super"){
       this.showSuper = true;
+      this.showGroup = true;
+      this.showBasic = true;
       alert("Super user")
     } else if (this.user_type[0] === "group"){
       this.showGroup = true;
+      this.showBasic = true;
       alert("Group user")
     } else {  // (this.user_type[0] === "basic")
       this.showBasic = true;
