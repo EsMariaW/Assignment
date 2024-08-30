@@ -1,0 +1,20 @@
+[
+    {
+        "groupName": "basicGroup",
+        "creator": "superAdmin",
+        "members": ["AB","CD","EF"],
+        "channels": ["channel1"]
+    },
+    {
+        "groupName": "exclusiveGroup",
+        "creator": "groupAdmin",
+        "members": ["CD","EF"],
+        "channels": ["xchannel1"]
+    },
+    {
+        "groupName": "exclusiveGroup",
+        "creator": "groupAdmin",
+        "members": ["CD","EF"],
+        "channels": ["xchannel1"]
+    }
+]
