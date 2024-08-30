@@ -1,12 +1,13 @@
-<div *ngIf="showBasic">
-    Basic 
+<ng-container *ngIf = "groups.length>0">
+    <div *ngFor="let group of groups">
+        {{group}}
+    </div>
+</ng-container>
+
+<div *ngIf="user_type[0] === 'super' || user_type[0] === 'group'">
+    Things Group Admin and Super Admin can do
   </div>
-  
-<div *ngIf="showGroup">
-    Group 
+
+<div *ngIf="user_type[0] === 'super'">
+    Things only Super Admin can do
 </div>
-  
-<div *ngIf="showSuper">
-    Super 
-</div>
-  
