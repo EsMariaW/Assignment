@@ -44,8 +44,8 @@ export class LoginComponent {
             sessionStorage.setItem("groups",JSON.stringify(thisUser.groups));
             sessionStorage.setItem("allData",data);
 
-            // send user to home-page 
-            this.router.navigateByUrl('/home-page');
+            // send user to dashboard
+            this.router.navigateByUrl('/dashboards');
           }
         }
       )

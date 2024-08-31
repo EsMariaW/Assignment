@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // to use ngIf, etc.
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-dashboards',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  templateUrl: './dashboards.component.html',
+  styleUrl: './dashboards.component.css'
 })
-
-export class HomePageComponent {
+export class DashboardsComponent {
   user_type: any;
   groups: any;
 
