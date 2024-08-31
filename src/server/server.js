@@ -19,6 +19,9 @@ app.post('/api/login', require('./router/login'));
 // route to create an account
 app.post('/createAccount', require('./router/createAccount'));
 
+// to send data.json to create dashboard
+app.get('/dashboard', require('./router/dataToDashboards'));
+
 const http = require('http').Server(app);
 http.listen(3000, ()=>{
     console.log("Server listening on port 3000");

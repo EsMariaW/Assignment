@@ -5,6 +5,6 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
-    {path: 'dashboards', component: DashboardsComponent},
+    {path: 'dashboard', component: DashboardsComponent},
     {path: 'create-account', component: CreateAccountComponent}
 ];

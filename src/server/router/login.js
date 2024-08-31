@@ -8,8 +8,6 @@ module.exports = function(req,res){
     fs.readFile("./data/data.json", "utf8", function(err,data){
         if (err) throw err;
 
-        console.log("here");
-
         // if no err
         let allData = JSON.parse(data);
         let allUsers = allData.users;
@@ -20,7 +18,6 @@ module.exports = function(req,res){
         if (index != -1){      // i.e. if matches valid user
             // send all details
             res.send(data);
-            console.log(data);
         } else {
             res.send(false);
         }

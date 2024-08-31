@@ -1,12 +1,43 @@
-<ng-container *ngIf = "groups.length>0">
-    <div *ngFor="let group of groups">
-        {{group}}
-    </div>
-</ng-container>
-
 <div *ngIf="user_type.includes('basic')">
-    Is basic
+    <h2>User Dashboard</h2>
+    Groups you have been added to:
+    <div *ngIf = "userGroupsIDs.length>0"> <!-- if user is in at least one group -->
+        <ul>
+            <ng-container *ngFor="let userGroupID of userGroupsIDs"> <!-- for each group user is in-->
+                <li>
+                    {{getGroupName(userGroupID)}}   <!-- find group with matching id, and display its name-->
+                    <ng-container *ngIf = "getNumberOfChannels(userGroupID) > 0 ">   <!-- if group has at least one channel -->
+                        <ul>
+                            <ng-container *ngFor="let channelID of getGroupChannels(userGroupID)">
+                                <li>
+                                    {{getChannelName(channelID)}}
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </ng-container>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+    <br>
+    Other Groups:
+    <ng-container *ngFor="let group of allGroups">
+        <ul>
+            <div *ngIf="isNotMemberOf(group.groupID) ">
+                <li>
+                    {{getGroupName(group.groupID)}}
+                </li>
+            </div>
+        </ul>
+    </ng-container>
 </div>
+
+
+
+
+
+
+
 
 <div *ngIf="user_type.includes('group')">
     Is group

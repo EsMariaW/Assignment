@@ -45,7 +45,7 @@ export class LoginComponent {
             sessionStorage.setItem("allData",data);
 
             // send user to dashboard
-            this.router.navigateByUrl('/dashboards');
+            this.router.navigateByUrl('/dashboard');
           }
         }
       )
