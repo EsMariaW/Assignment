@@ -80,4 +80,17 @@ export class DashboardsComponent {
     let index = this.userGroupsIDs.findIndex((ugID:any) => ugID == searchID);
     return index == -1;
   }
+
+  logOut(){ // when login button is pressed
+    sessionStorage.clear();
+    this.router.navigateByUrl('login'); // redirect user to login page
+  }
+
+  deleteAccount(){
+    let username = sessionStorage.getItem("username");
+    this.httpClient.post("http://localhost:3000/deleteAccount", {username})
+    .subscribe({
+      next: (response) => this.logOut()
+    });
+  }
 }

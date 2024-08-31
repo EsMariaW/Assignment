@@ -19,6 +19,9 @@ app.post('/api/login', require('./router/login'));
 // route to create an account
 app.post('/createAccount', require('./router/createAccount'));
 
+// route to allow user who is loggied in to delete their account
+app.post('/deleteAccount',require('./router/deleteAccount'));
+
 // to send data.json to create dashboard
 app.get('/dashboard', require('./router/dataToDashboards'));
 
