@@ -5,16 +5,17 @@ module.exports = function(req,res){
     let password = req.body.password;
 
 
-    fs.readFile("./data/data.json","utf8", function(err,data){
+    fs.readFile("./data/data.json", "utf8", function(err,data){
         if (err) throw err;
+
+        console.log("here");
 
         // if no err
         let allData = JSON.parse(data);
         let allUsers = allData.users;
         let index = allUsers.findIndex(user=>
-            user.username == "abby"
+            user.username == username
         );
-        console.log(allData.users[index]);
 
         if (index != -1){      // i.e. if matches valid user
             // send all details

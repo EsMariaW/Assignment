@@ -50,7 +50,9 @@ export class LoginComponent {
         }
       )
   }
-  
-  createAccount(){}
+
+  createAccount(){
+    this.router.navigateByUrl('/create-account');
+  }
 }
 

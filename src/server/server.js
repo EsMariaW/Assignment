@@ -16,6 +16,9 @@ app.use(express.json());
 // route “/api/auth” that will respond to a login request.
 app.post('/api/login', require('./router/login'));
 
+// route to create an account
+app.post('/createAccount', require('./router/createAccount'));
+
 const http = require('http').Server(app);
 http.listen(3000, ()=>{
     console.log("Server listening on port 3000");
