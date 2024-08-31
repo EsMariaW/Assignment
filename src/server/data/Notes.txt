@@ -1,7 +1,47 @@
-Chat user model: 
-    username: unique identifier,
-    email: ,
-    id: ,
-    roles: [can be: basic, group, super],
-    groups: [all, groups],
-    password:,
+data.json 'templates:
+    users:
+        {
+            "username": "unique identifier",
+            "email": "username@gmail.com",
+            "id": "usernameID",
+            "roles": ["basic"], // group // super
+            "groups": ["G1"], // ids
+            "password": "usernamePassword",
+            "valid": "true" // account is active
+        }
+
+    groups:
+        {
+            "groupID":"G1",
+            "groupName":"Group Name",
+            "groupAdmin":["group administrator username"],
+            "superAdmin": ["super administrator username"],
+            "members": [], // list of all members
+            "channelIDs": [] // list of all channel ids
+        }
+    channels: 
+        {
+            "channelID": "C1",
+            "channelName": "Channel Name",
+            "groupID":"G1", // of group to which channel belongs
+            "bannedUserIDs": [] // user ids of any banned group members
+        }
+
+Test data:
+    abby:
+        G1 - basic
+    gerald:
+        G2 - basic 
+        G3 - group
+    chris: 
+        G1 - group 
+        G2 - group 
+        G3 - basic 
+    darren:
+        G1 - group 
+        G2 - group 
+        G3 - group
+    emma:
+        G1 - super 
+        G2 - super 
+        G3 - super  

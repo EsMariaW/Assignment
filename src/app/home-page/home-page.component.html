@@ -4,10 +4,14 @@
     </div>
 </ng-container>
 
-<div *ngIf="user_type[0] === 'super' || user_type[0] === 'group'">
-    Things Group Admin and Super Admin can do
-  </div>
+<div *ngIf="user_type.includes('basic')">
+    Is basic
+</div>
 
-<div *ngIf="user_type[0] === 'super'">
-    Things only Super Admin can do
+<div *ngIf="user_type.includes('group')">
+    Is group
+</div>
+
+<div *ngIf="user_type.includes('super')">
+    Is super
 </div>

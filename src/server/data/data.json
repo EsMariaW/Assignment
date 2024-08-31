@@ -1,0 +1,121 @@
+{
+    "users":[
+        {
+            "username": "abby",
+            "email": "abby@gmail.com",
+            "id": "abbyID",
+            "roles": ["basic"],
+            "groups": ["G1"],
+            "password": "abbyPassword",
+            "valid": "true"
+        },
+        {
+            "username": "gerald",
+            "email": "gerald@gmail.com",
+            "id": "geraldID",
+            "roles": ["basic","group"],
+            "groups": ["G2","G3"],
+            "password": "geraldPassword",
+            "valid": "true"
+        },
+        {
+            "username": "chris",
+            "email": "chris@gmail.com",
+            "id": "chrisID",
+            "roles": ["group","basic"],
+            "groups": ["G1", "G2", "G3"],
+            "password": "chrisPassword",
+            "valid": "true"
+        },
+        {
+            "username": "darren",
+            "email": "darren@gmail.com",
+            "id": "darrenID",
+            "roles": ["group"],
+            "groups": ["G1", "G2", "G3"],
+            "password": "darrenPassword",
+            "valid": "true"
+        },
+        {
+            "username": "emma",
+            "email": "emma@gmail.com",
+            "id": "emmaID",
+            "roles": ["super"],
+            "groups": ["G1", "G2", "G3"],
+            "password": "emmaPassword",
+            "valid": "true"
+        }
+    ],
+    
+    "groups": [
+        {
+            "groupID":"G1",
+            "groupName":"Group 1",
+            "groupAdmin":["chris","darren"],
+            "superAdmin": ["emma"],
+            "members": ["abby","chris","emma","darren"],
+            "channelIDs": ["C1","C2"]
+        },
+        {
+            "groupID":"G2",
+            "groupName":"Group 2",
+            "groupAdmin":["chris","darren"],
+            "superAdmin": ["emma"],
+            "members": ["chris","gerald","emma","darren"],
+            "channelIDs": ["C1","C2"]
+        },
+        {
+            "groupID":"G3",
+            "groupName":"Group 3 (exclusive)",
+            "groupAdmin":["gerald","darren"],
+            "superAdmin": ["emma"],
+            "members": ["chris","emma","gerald","darren"],
+            "channelIDs": ["C1","C2","C3"]
+        }
+    ],
+
+    "channels": [
+        {
+            "channelID": "C1",
+            "channelName": "General",
+            "groupID":"G1",
+            "bannedUserIDs": []
+        },
+        {
+            "channelID": "C2",
+            "channelName": "SubGroup",
+            "groupID":"G1",
+            "bannedUserIDs": []
+        },
+        {
+            "channelID": "C1",
+            "channelName": "General",
+            "groupID":"G2",
+            "bannedUserIDs": []
+        },
+        {
+            "channelID": "C2",
+            "channelName": "SubGroup",
+            "groupID":"G2",
+            "bannedUserIDs": []
+        },
+        {
+            "channelID": "C1",
+            "channelName": "General",
+            "groupID":"G3",
+            "bannedUserIDs": []
+        },
+        {
+            "channelID": "C2",
+            "channelName": "SubGroup 1",
+            "groupID":"G3",
+            "bannedUserIDs": []
+        },
+        {
+            "channelID": "C3",
+            "channelName": "SubGroup 2",
+            "groupID":"G3",
+            "bannedUserIDs": []
+        }
+    ]
+}

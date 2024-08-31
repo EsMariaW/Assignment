@@ -5,28 +5,23 @@ module.exports = function(req,res){
     let password = req.body.password;
 
 
-    fs.readFile("./data/usersData.json","utf8", function(err,data){
+    fs.readFile("./data/data.json","utf8", function(err,data){
         if (err) throw err;
 
         // if no err
-        let allUsers = JSON.parse(data);
+        let allData = JSON.parse(data);
+        let allUsers = allData.users;
+        let index = allUsers.findIndex(user=>
+            user.username == "abby"
+        );
+        console.log(allData.users[index]);
 
-        // check against array of users
-        //      to see if submitted data matches a valid user
-
-        if (allUsers.find(user => 
-            user.username == username &&
-            user.password == password)){      // i.e. if matches valid user
-
-            let userData = allUsers.find(user => 
-                user.username == username &&
-                user.password == password)
-            // send back a property of valid=true 
-            // also send the rest of the user details
-            userData.valid = true;
-            res.send(userData);
+        if (index != -1){      // i.e. if matches valid user
+            // send all details
+            res.send(data);
+            console.log(data);
         } else {
-            res.send({"valid": false});
+            res.send(false);
         }
     })
 };

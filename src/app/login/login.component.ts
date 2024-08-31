@@ -28,20 +28,24 @@ export class LoginComponent {
     this.httpClient.post("http://localhost:3000/api/login", user,httpOptions)
       .subscribe(
         (data: any)=> {  // data from res.send()
-          if(data.valid){   // user has logged in
+          if(data == false){   
+            alert("Please try again");
+        
+          } else {  // valid user has logged in
             // store their details in sessionStorage
             //    except for .password and .valid
-            sessionStorage.setItem("username", data.username.toString());
-            sessionStorage.setItem("email", data.email.toString());
-            sessionStorage.setItem("id", data.id.toString());
-            sessionStorage.setItem("roles", JSON.stringify(data.roles));
-            sessionStorage.setItem("groups",JSON.stringify(data.groups));
+            let allUsers = data.users;
+            let index = allUsers.findIndex((user:any) => user.username == this.username);
+            let thisUser = data.users[index];
+            sessionStorage.setItem("username", thisUser.username.toString());
+            sessionStorage.setItem("email", thisUser.email.toString());
+            sessionStorage.setItem("id", thisUser.id.toString());
+            sessionStorage.setItem("roles", JSON.stringify(thisUser.roles));
+            sessionStorage.setItem("groups",JSON.stringify(thisUser.groups));
+            sessionStorage.setItem("allData",data);
 
             // send user to home-page 
             this.router.navigateByUrl('/home-page');
-
-          } else {
-            alert("Please try again");
           }
         }
       )
