@@ -23,7 +23,7 @@ export class LoginComponent {
   
   constructor(private router:Router, private httpClient: HttpClient){}
 
-  submit(){
+  login(){
     let user = {username: this.username, password: this.password};
     this.httpClient.post("http://localhost:3000/api/login", user,httpOptions)
       .subscribe(
@@ -50,5 +50,7 @@ export class LoginComponent {
         }
       )
   }
+  
+  createAccount(){}
 }
 

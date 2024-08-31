@@ -4,5 +4,9 @@
     <input type="username" name="username" [(ngModel)]="username" class="form-label">
     <label for="password">Password</label>
     <input type="password" name="password" [(ngModel)]="password" class="form-label">
-    <button (click)="submit()" type="submit">Submit</button>
+    <button (click)="login()" type="login">Login</button>
+    <br>
+    <br>
+    <p><i>Don't have an account? Create an account:</i></p>
+    <button (click)="createAccount()" type="createAccount">Create Account</button>
 </form>
